@@ -21,12 +21,12 @@ def load_transformed_dataset(img_size=32, batch_size=128) -> DataLoader:
     ])
 
     # 加载训练集和测试集
-    train_dataset = torchvision.datasets.CIFAR10(root="./datasets", 
+    train_dataset = torchvision.datasets.CIFAR10(root="../datasets",
                                                 train=True,
                                                 download=False,
                                                 transform=train_data_transform)
     
-    test_dataset = torchvision.datasets.CIFAR10(root="./datasets",
+    test_dataset = torchvision.datasets.CIFAR10(root="../datasets",
                                                train=False, 
                                                download=False,
                                                transform=test_data_transform)
