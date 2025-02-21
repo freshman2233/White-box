@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     train_loader, test_loader = load_transformed_dataset(args.img_size, args.batch_size)
     noise_scheduler = NoiseScheduler().to(device)
-    model = SimpleUnet().to(device)
+    model = SimpleUnet().to(device)  
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
     criterion = nn.MSELoss()
     model = train(model, train_loader, test_loader, noise_scheduler, criterion, optimizer, device, args.epochs, args.img_size)
